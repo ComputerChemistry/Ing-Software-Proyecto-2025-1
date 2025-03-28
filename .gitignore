@@ -1,0 +1,14 @@
+ -*- mode: gitignore; -*-
+
+#Archivos temporales de emacs
+
+\#*\#
+.\#*
+
+#Archivos org-mode
+.Org*
+
+# Archivos comprimidos, ejecutables y de estilo
+.zip
+.exe
+
