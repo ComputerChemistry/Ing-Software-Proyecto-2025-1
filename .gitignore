@@ -1,14 +1,40 @@
  -*- mode: gitignore; -*-
-
-#Archivos temporales de emacs
-
+# Ignorar Archivos temporales de emacs
 \#*\#
 .\#*
 
-#Archivos org-mode
+# Ignorar archivos org-mode
 .Org*
+.org* 
 
-# Archivos comprimidos, ejecutables y de estilo
+# Ignorar archivos comprimidos, ejecutables y de estilo
 .zip
 .exe
+
+# Ignorar directorio de entorno virtual de Python
+Ingenieria-de-Software-2025-1/
+
+# ignorar archivos de base de datos
+db.sqlite3
+
+# Archivos de logs
+backend/*.log
+
+# Ignorar directorio de framework
+backeend/__pycache__/
+
+# Ignorar archivos de entorno
+backend/.env
+
+# Archivos y directorios generados por WebStorm
+frontend/.idea/
+*.iml
+
+# Archivos de caché
+frontend/.cache/
+
+# Archivos de temporales y backups
+*.swp
+*.swo
+*.bak
 
