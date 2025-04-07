@@ -37,8 +37,8 @@ Proyecto desarrollado durante el curso de **Ingeniería de Software I** en la *L
 
 ## 📁 Contenido del Repositorio
 
-- `/backend/` — Código fuente del backend en Java con Spring Boot  
-- `/frontend/` — Aplicación React con TailwindCSS y TypeScript  
+- `/backend/` — Código fuente del backend en Python con Django  
+- `/frontend/` — Aplicación React con TailwindCSS y Javascript  
 - `/docs/` — Documentación del proyecto (diagramas, especificaciones, etc.)  
 - `/sql/` — Scripts SQL para la creación de la base de datos  
 
@@ -53,5 +53,10 @@ Proyecto desarrollado durante el curso de **Ingeniería de Software I** en la *L
 - npm
 
 ### ▶️ Backend
+
+
+
+
+### ▶️ Frontend
 
 
