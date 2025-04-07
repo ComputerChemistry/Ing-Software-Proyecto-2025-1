@@ -33,8 +33,12 @@ frontend/.idea/
 # Archivos de caché
 frontend/.cache/
 
+# Modulos de node 
+frontend/node_modules/
+
 # Archivos de temporales y backups
 *.swp
 *.swo
 *.bak
+
 
