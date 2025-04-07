@@ -4,8 +4,8 @@ Proyecto desarrollado durante el curso de **Ingeniería de Software I** en la *L
 
 ---
 
-![GitHub last commit](https://img.shields.io/github/last-commit/ComputerChemistry/Estructuras-de-Datos-2025-1?style=for-the-badge&color=b4befe) 
-![GitHub repo size](https://img.shields.io/github/repo-size/ComputerChemistry/Estructuras-de-Datos-2025-1?style=for-the-badge&color=cba6f7) 
+![GitHub last commit](https://img.shields.io/github/last-commit/ComputerChemistry/Ing-Software-Proyecto-2025-1?style=for-the-badge&color=b4befe) 
+![GitHub repo size](https://img.shields.io/github/repo-size/ComputerChemistry/Ing-Software-Proyecto-2025-1?style=for-the-badge&color=cba6f7) 
 ![Github Makefile](https://img.shields.io/badge/Build-Makefile-89b4fa?style=for-the-badge&logo=gnu&logoColor=white) 
 ![Github Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Github Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
