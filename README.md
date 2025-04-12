@@ -18,6 +18,12 @@ Proyecto desarrollado durante el curso de **Ingeniería de Software I** en la *L
 
 ---
 
+## Descripcion del Proyecto
+
+
+
+
+
 ## ⚙️ Tecnologías Utilizadas
 
 ### 🔧 Backend
