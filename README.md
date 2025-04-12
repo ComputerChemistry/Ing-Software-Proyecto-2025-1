@@ -22,7 +22,8 @@ Proyecto desarrollado durante el curso de **Ingeniería de Software I** en la *L
 
 ### 🔧 Backend
 - **Lenguaje:** Python  
-- **Framework:** Django  
+- **Framework:** Django
+- **Herramienta de Creacion de Proyecto:** Makefile
 - **Gestión de dependencias:** venv & pip  
 - **Base de Datos:** MySQL  
 - **Editor:** Emacs  
