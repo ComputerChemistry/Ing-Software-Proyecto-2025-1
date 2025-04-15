@@ -29,11 +29,12 @@ router.register(r'Facultades', FacultadesViewSet)
 router.register(r'Usuarios', UsuariosViewSet)
 
 urlpatterns = [
-    path('cafeteria/', include('apps.cafeteria.urls')),
+  #  path('api/', include('apps.cafeteria.urls')),
     path('admin/', admin.site.urls),  
     path('', RedirectView.as_view(url='/cafeteria/', permanent=False)),  
     
     #Endpoins de Autenticacion
+    path('api/', include(router.urls)),  
     path('api/register', UserRegisterView.as_view(), name='register'),
     path('api/token', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
