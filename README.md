@@ -60,9 +60,24 @@ Proyecto desarrollado durante el curso de **Ingeniería de Software I** en la *L
 - npm
 
 ### ▶️ Backend
+---
 
+	1. Navega hasta el directorio raiz del backed: - `/backend/`
 
+	2. Instala las dependencias necesarias (si aún no lo has hecho):
 
+    ```bash
+    pip install -r requirements.txt
+    ```
+	3. Para ejecutar el Backend Usar el Siguiente Comando Dentro de el
+	directorio raiz del backend - `/backend/`
+
+	```bash 
+		python manage.py runserver
+	```
+    Esto levantará el servidor en `http://127.0.0.1:8000/` (por defecto)
+
+---
 
 ### ▶️ Frontend
 
