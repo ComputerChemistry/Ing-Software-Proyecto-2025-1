@@ -89,7 +89,7 @@ net start mysql
 mysql -u root -p
 ```
 	  
-#### **Para MacOS** 
+#### **Para MacOS:** 
 1. Abre la Terminal 
 2. Instalar **MySQL** usando Homebrew
 ```bash 
@@ -135,13 +135,13 @@ Si MySQL no está instalado, puedes instalarlo con:
  - En Ubuntu/Debian:
 
  ```bash
- sudo apt update
- sudo apt install mysql-server
+sudo apt update
+sudo apt install mysql-server
  ```
 
 - En Fedora/CentOS/RHEL:
 ```bash
- sudo dnf install mysql-server
+sudo dnf install mysql-server
 ```
 - En Arch Linux y distribuciones basadas en Arch (Manjaro,
    EndeavourOS, Arco etc)
@@ -154,18 +154,18 @@ sudo pacman -S mysql
 Desde el AUR (Arch User Repository)
   
  ```bash 
- yay -S mysql 
- paru -S mysql 
+yay -S mysql 
+paru -S mysql 
  ``` 
  - En Gentoo Linux 
 ```bash
- sudo emerge --ask dev-db/mysql
+sudo emerge --ask dev-db/mysql
  ```
 3. Para ejecutar el Backend Usar el Siguiente Comando Dentro de el
 directorio raiz del backend - `/backend/`
 
 ```bash
- python manage.py runserver
+python manage.py runserver
 ```
 Esto levantará el servidor en `http://127.0.0.1:8000/` (por defecto)
 
