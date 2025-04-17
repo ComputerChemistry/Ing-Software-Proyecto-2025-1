@@ -62,20 +62,112 @@ Proyecto desarrollado durante el curso de **Ingeniería de Software I** en la *L
 ### ▶️ Backend
 ---
 
-	1. Navega hasta el directorio raiz del backed: - `/backend/`
+1. Navega hasta el directorio raiz del backend: - `/backend/` 
 
-	2. Instala las dependencias necesarias (si aún no lo has hecho):
+2. Instala las dependencias necesarias (si aún no lo has hecho):
 
-    ```bash
-    pip install -r requirements.txt
-    ```
-	3. Para ejecutar el Backend Usar el Siguiente Comando Dentro de el
-	directorio raiz del backend - `/backend/`
+```bash
+pip install -r requirements.txt
+```
 
-	```bash 
-		python manage.py runserver
-	```
-    Esto levantará el servidor en `http://127.0.0.1:8000/` (por defecto)
+**Base de datos MySQL:**
+
+   Asegúrate de que el servicio de MySQL esté en ejecución antes de arrancar el servidor. Aquí te mostramos cómo hacerlo en Windows y Linux:
+
+#### **Para Windows:**
+
+1. Abre la terminal de Windows (CMD o PowerShell) con permisos de administrador.
+2. Ejecuta el siguiente comando para iniciar el servicio de MySQL:
+
+```bash
+net start mysql
+```
+
+3. Verifica que MySQL esté funcionando correctamente accediendo a la consola de MySQL:
+
+```bash
+mysql -u root -p
+```
+	  
+#### **Para MacOS** 
+1. Abre la Terminal 
+2. Instalar **MySQL** usando Homebrew
+```bash 
+brew install mysql
+```
+3. Iniciar el Servicio de MySQL 
+	
+```bash
+brew services start mysql
+```
+	
+   
+#### **Para Linux:**
+
+1. Abre la terminal.
+2. Para iniciar el servicio de MySQL en Linux, puedes usar el siguiente comando:
+
+- En distribuciones basadas en `systemd` (como Ubuntu, Debian, Fedora, etc.):
+
+```bash
+sudo systemctl start mysql
+```
+- Si usas una distribución con `init.d` (como algunas versiones de Ubuntu anteriores a 16.04):
+
+```bash
+sudo service mysql start
+```
+
+3. Para asegurarte de que MySQL está corriendo, puedes verificar su estado con:
+
+```bash
+sudo systemctl status mysql
+```
+
+4. También puedes verificar si MySQL está funcionando correctamente accediendo a la consola de MySQL:
+
+```bash
+mysql -u root -p
+```
+
+Si MySQL no está instalado, puedes instalarlo con:
+
+ - En Ubuntu/Debian:
+
+ ```bash
+ sudo apt update
+ sudo apt install mysql-server
+ ```
+
+- En Fedora/CentOS/RHEL:
+```bash
+ sudo dnf install mysql-server
+```
+- En Arch Linux y distribuciones basadas en Arch (Manjaro,
+   EndeavourOS, Arco etc)
+  
+Desde los repositorios oficiales de Arch:
+   
+```bash
+sudo pacman -S mysql 
+```
+Desde el AUR (Arch User Repository)
+  
+ ```bash 
+ yay -S mysql 
+ paru -S mysql 
+ ``` 
+ - En Gentoo Linux 
+```bash
+ sudo emerge --ask dev-db/mysql
+ ```
+3. Para ejecutar el Backend Usar el Siguiente Comando Dentro de el
+directorio raiz del backend - `/backend/`
+
+```bash
+ python manage.py runserver
+```
+Esto levantará el servidor en `http://127.0.0.1:8000/` (por defecto)
 
 ---
 
