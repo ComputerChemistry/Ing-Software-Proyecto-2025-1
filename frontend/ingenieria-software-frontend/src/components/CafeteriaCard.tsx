@@ -5,22 +5,23 @@ type Cafeteria = {
     
     name: string; 
     location: string:
-    imageURL: string;
+    imageUrl: string;
     
-}
+};
 
-const CafeteriaCard: React.FC<Cafeteria> = ({name, location, imageURL}) => {
+const CafeteriaCard: React.FC<Cafeteria> = ({name, location, imageUrl}) => {
 
     return (
 	
-	<div= className: 
-	    <img= className:
-	    <div= className:
-	    <h2= className:
-	    <p= className:
-
+	<div= className:"card"> 
+	    <img= className:"w-full" src={imageUrl} alt={name} />
+	    <div= className:"p-4">
+	    <h2= className:"font-bold text-xl">{name}</h2>
+	    <p= className:"text-gray-500">{location}</p>
 	
-
+	</div>
+      </div>
     );
 };
 
+export default CafeteriaCard;
