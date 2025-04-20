@@ -36,13 +36,13 @@ const LoginCard: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br animate-fadeInZoom from-white-600 via-white-600 flex items-center justify-center px-4 py-12">
-      <div className="backdrop-blur-sm bg-white/10 border border-white/40 shadow-2xl rounded-2xl p-8 w-full max-w-md text-white relative overflow-hidden">
+      <div className="backdrop-blur-md w-full bg-black/40 border border-white/40 shadow-2xl rounded-2xl p-8 w-full max-w-md text-white relative overflow-hidden">
         {/* Elementos decorativos de fondo */}
         <div className="cafeteria-card"></div>
         <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-white/20 rounded-full blur-3xl"></div>
 
         <div className="relative">
-          <h2 className="text-3xl font-bold text-center mb-2 tracking-wide">Bienvenido</h2>
+          <h2 className="text-3xl font-bold text-center mb-4 tracking-wide">Bienvenido</h2>
           <p className="text-white/70 text-center mb-6">Ingresa tus credenciales para continuar</p>
 
           {error && (
@@ -95,7 +95,7 @@ const LoginCard: React.FC = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-3 rounded-lg bg-gradient-to-r from-violet-500 to-indigo-600 hover:from-violet-600 hover:to-indigo-700 text-white font-semibold tracking-wide transition duration-300 shadow-lg shadow-violet-700/30 relative overflow-hidden"
+              className="w-full py-3 rounded-lg bg-gradient-to-r from-violet-500 to-indigo-600 hover:from-violet-600 hover:to-indigo-700 text-white font-semibold tracking-wide transition duration-300 shadow-lg shadow-violet-700/30 relative overflow-hidden transform transition-transform duration-300 hover:scale-105"
             >
               {isLoading ? (
                 <span className="flex items-center justify-center">
