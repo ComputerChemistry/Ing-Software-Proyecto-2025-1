@@ -14,4 +14,7 @@ urlpatterns = [
     path ('', views.home, name='home'), 
     path ('', include (router.urls)), 
     path('cafeteria/Menus/por_tiendita/<int:tiendita_id>/', MenusPorTiendita.as_view()),
+
+    
+
 ]
