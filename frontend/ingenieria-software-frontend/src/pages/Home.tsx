@@ -46,13 +46,37 @@ const Home: React.FC = () => {
       nombre: 'Cafetería Trabajo Social',
       descripcion: 'Pasillo Central Departamento de Trabajo Social al lado del Edificio 10C',
       imagen: '/TrabajoSocial1Card.jpeg',
+      horario: '17:35',
     },
+   
+    {
+     id: 'Cafeteria Geologia', 
+     nombre: 'Cafeteria Geologia',
+     descripcion: 'Al lado del edificio 3V y frente al 3A de Literatura',
+     imagen: '',
+     horario: '06:00 - 18:00',
+    },
+    {
+     id: 'Cafeteria Artes', 
+     nombre: 'Cafeteria Artes',
+     descripcion: 'Detras del Edificio 3k3',
+     imagen: '',
+     horario: '06:00 - 18:00',
+    },
+     {
+     id: 'Cafeteria Educacion', 
+     nombre: 'Cafeteria Educacion',
+     descripcion: 'Al lado del edificio 3V y frente al 3A de Literatura',
+     imagen: 'Educacion1Card.jpeg',
+     horario: '06:00 - 18:00',
+    },
+
   ];
 
   return (
     <>
-      <Navbar />
-      <div className="absolute inset-0 min-h-screen bg-gradient-to-r from-indigo-900 via-gray-900 to-yellow-900 bg-opacity-70 backdrop-blur-sm flex flex-col items-center justify-center py-10 px-4">
+     <Navbar />
+      <div className="absolute inset-0 min-h-screen bg-gradient-to-r from-purple-900 via-gray-900 to-blue-900 bg-opacity-60 backdrop-blur-2xl flex flex-col items-center justify-center py-10 px-4">
         <div className="relative z-10 text-white w-full max-w-6xl">
          
 	  <h1 className="text-4xl font-bold text-white mb-8 text-center mt-28">
@@ -67,16 +91,17 @@ const Home: React.FC = () => {
                 nombre={cafeteria.nombre}
                 descripcion={cafeteria.descripcion}
                 imagen={cafeteria.imagen}
-              />
+                horario={cafeteria.horario}
+	     />
             ))}
           </div>
-
           <p className="mt-10 text-white/80 text-center">
             Haz clic en cualquier tarjeta para ver más información.
           </p>
         </div>
       </div>
     </>
+
   );
 };
 

@@ -1,10 +1,14 @@
 import React, { useState, FormEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 const LoginCard: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+
+  const navigate = useNavigate(); 
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -24,7 +28,8 @@ const LoginCard: React.FC = () => {
 
       if (res.ok && data.success) {
         alert('Login exitoso');
-      } else {
+         navigate('/');
+        } else {
         setError(data.error || 'Credenciales inválidas');
       }
     } catch (err) {
@@ -36,7 +41,7 @@ const LoginCard: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br animate-fadeInZoom from-white-600 via-white-600 flex items-center justify-center px-4 py-12">
-      <div className="backdrop-blur-md w-full bg-black/40 border border-white/40 shadow-2xl rounded-2xl p-8 w-full max-w-md text-white relative overflow-hidden">
+      <div className="backdrop-blur-lg w-full bg-black/40 border border-white/40 shadow-2xl rounded-2xl p-8 w-full max-w-md text-white relative overflow-hidden">
         {/* Elementos decorativos de fondo */}
         <div className="cafeteria-card"></div>
         <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-white/20 rounded-full blur-3xl"></div>
@@ -126,13 +131,12 @@ const LoginCard: React.FC = () => {
               )}
             </button>
           </form>
-
           <div className="mt-8 text-center text-white/70">
             <p>
               ¿No tienes una cuenta?{' '}
               <a href="#" className="text-white hover:underline">
                 Regístrate
-              </a>
+             </a>
             </p>
           </div>
         </div>

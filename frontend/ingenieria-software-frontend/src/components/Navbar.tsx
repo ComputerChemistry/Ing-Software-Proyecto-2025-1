@@ -32,8 +32,8 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="fixed top-0 w-full z-50 px-4 py-3 transition-all duration-300 ease-in-out">
-      <div className="backdrop-blur-xl bg-black/40 border-b-2 border-white/30 shadow-2xl rounded-xl max-w-full mx-auto flex justify-between items-center px-8 py-4 text-white">
+    <nav className="fixed top-0 w-full text-7x1 z-60 px-4 py-3 transition-all duration-300 ease-in-out">
+      <div className="backdrop-blur-sm  bg-black/30 border-b-2 border-white/30 shadow-2xl rounded-xl max-w-full mx-auto flex justify-between items-center px-8 py-4 text-white">
         
         {/* Logo en blanco */}
         <div className="text-2xl font-bold text-white">
@@ -73,7 +73,7 @@ const Navbar: React.FC = () => {
               Facultades
             </button>
             {openDropdown === "facultades" && (
-              <ul className="absolute top-full mt-2 left-0 w-60 bg-gray-800 text-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transform transition-all duration-300 ease-in-out">
+              <ul className="absolute top-full mt-7 left-0 w-60 bg-gray-800 text-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transform transition-all duration-300 ease-in-out">
                 {facultades.map((facultad) => (
                   <li key={facultad.id}>
                     <a className="block px-4 py-2 hover:bg-gray-700 transition duration-200" href="#">
@@ -95,7 +95,7 @@ const Navbar: React.FC = () => {
               Menús
             </button>
             {openDropdown === "menus" && (
-              <ul className="absolute top-full mt-2 left-0 w-60 bg-gray-800 text-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transform transition-all duration-300 ease-in-out">
+              <ul className="absolute top-full mt-6 left-0 w-60 bg-gray-800 text-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transform transition-all duration-300 ease-in-out">
                 <li>
                   <a className="block px-4 py-2 hover:bg-gray-700 transition" href="#">
                     Menú 1
