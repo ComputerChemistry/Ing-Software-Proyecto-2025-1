@@ -17,6 +17,17 @@ Proyecto desarrollado durante el curso de **Ingeniería de Software I** en la *L
 ![Github TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
 ---
+# Índice
+
+1. [Descripción del Proyecto](#descripcion-del-proyecto)  
+2. [Tecnologías Utilizadas](#️-tecnologías-utilizadas)  
+   1. [Backend](#-backend)  
+   2. [Frontend](#-frontend)  
+3. [Contenido del Repositorio](#-contenido-del-repositorio)  
+4. [Instalación y uso](#️-instalación-y-uso)  
+   1. [Requisitos](#-requisitos)  
+   2. [Backend](#-backend)  
+   3. [Frontend](#-frontend)  
 
 ## Descripcion del Proyecto
 
