@@ -1,11 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { CiForkAndKnife } from "react-icons/ci";
+import { CiClock2 } from "react-icons/ci";
 
 interface CafeteriaCardProps {
   id: string;
   nombre: string;
   descripcion: string;
-  imagen?: string; // Propiedad opcional para la imagen
+  imagen?: string; 
+
 }
 
 const CafeteriaCard: React.FC<CafeteriaCardProps> = ({ id, nombre, descripcion, imagen }) => {
@@ -22,6 +25,7 @@ const CafeteriaCard: React.FC<CafeteriaCardProps> = ({ id, nombre, descripcion, 
             />
           )}
           <h2 className="text-xl font-semibold text-white mb-2">{nombre}</h2>
+	  <p className ="text-sm text-blue/80"> <CiClock2 /> </p>
           <p className="text-sm text-white/80">{descripcion}</p>
         </div>
       </div>
