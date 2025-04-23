@@ -13,19 +13,69 @@ from rest_framework.response import Response
 from rest_framework import status 
 from django.contrib.auth import authenticate 
 from rest_framework.decorators import api_view 
+from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.response import Response
 
 @api_view(['POST'])
 def login_view(request):
+    print("====== DEBUG LOGIN VIEW ======")
+    print("Request data:", request.data)
+    
     username = request.data.get('username')
     password = request.data.get('password')
-
-    user = authenticate(username=username, password=password)
-
-    if user is not None:
-        return Response({'success': True, 'username': user.username}, status=status.HTTP_200_OK)
-    else:
-        return Response({'success': False, 'error': 'Credenciales inválidas'}, status=status.HTTP_401_UNAUTHORIZED)         
+    
+    print(f"Intentando autenticar: {username} con contraseña: {password[:2]}...")
+    
+    try:
+        # Verificar si el usuario existe
+        user_exists = Usuarios.objects.filter(nombre_usuario=username).exists()
+        print(f"¿Usuario existe? {user_exists}")
+        
+        if user_exists:
+            user = Usuarios.objects.get(nombre_usuario=username)
+            print(f"Usuario encontrado: ID={user.id_usuarios}, Email={user.email}")
+            
+            # Calcular hash para comparar
+            import hashlib
+            hashed_password = hashlib.sha256(password.encode()).hexdigest()
+            print(f"Hash calculado: {hashed_password[:10]}...")
+            print(f"Hash almacenado: {user.contrasena[:10]}...")
+            print(f"¿Coinciden los hashes? {user.contrasena == hashed_password}")
+            
+            if user.contrasena == hashed_password:
+                print("Autenticación exitosa")
+                # Crear token JWT manualmente
+                from rest_framework_simplejwt.tokens import RefreshToken
+                
+                # Crear un token para este usuario
+                refresh = RefreshToken()
+                refresh['user_id'] = user.id_usuarios
+                refresh['username'] = user.nombre_usuario
+                
+                return Response({
+                    'success': True,
+                    'access_token': str(refresh.access_token)
+                }, status=status.HTTP_200_OK)
+            else:
+                print("Contraseña incorrecta")
+                return Response({
+                    'success': False,
+                    'error': 'Credenciales inválidas'
+                }, status=status.HTTP_401_UNAUTHORIZED)
+        
+        else:
+            print("Usuario no encontrado")
+            return Response({
+                'success': False,
+                'error': 'Usuario no encontrado'
+            }, status=status.HTTP_401_UNAUTHORIZED)
+    
+    except Exception as e:
+        print(f"Error en login_view: {str(e)}")
+        return Response({
+            'success': False,
+            'error': f'Error en el servidor: {str(e)}'
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 class MenusViewSet(viewsets.ModelViewSet): 
     queryset = Menus.objects.all()
@@ -84,7 +134,11 @@ class UserRegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserRegisterSerializer
     permission_classes = [AllowAny]
-        
+
+def perform_create(self, serializer): 
+    
+    user = serializer.save()
+
 def home(request): 
     return HttpResponse("<h1>Vista previa<h1>")
 
