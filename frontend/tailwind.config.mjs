@@ -5,8 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        cafeoscuro: "#4b3423", // fondo principal
+        cafemedio: "#8a745d",  // navbar o secciones destacadas
+      },
+    },
   },
   plugins: [],
-}
-
+};
