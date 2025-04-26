@@ -35,8 +35,16 @@ backend/.env
 # Archivos de caché
 **/.cache/
 
+<<<<<<< HEAD
 # Módulos de Node.js (ignorar node_modules en cualquier subcarpeta)
 **/node_modules/
+=======
+# Modulo de node 
+node_modules/
+
+# Modulos de node 
+frontend/node_modules/
+>>>>>>> f6168005f38a45fac435da9c0110e126fcc9e6ef
 
 # Archivos de temporales y backups
 *.swp
