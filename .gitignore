@@ -33,6 +33,9 @@ frontend/.idea/
 # Archivos de caché
 frontend/.cache/
 
+# Modulo de node 
+node_modules/
+
 # Modulos de node 
 frontend/node_modules/
 
