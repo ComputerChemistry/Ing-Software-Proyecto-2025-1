@@ -1,5 +1,6 @@
- -*- mode: gitignore; -*-
-# Ignorar Archivos temporales de emacs
+# -*- mode: gitignore; -*-
+
+# Ignorar archivos temporales de emacs
 \#*\#
 .\#*
 
@@ -14,34 +15,31 @@
 # Ignorar directorio de entorno virtual de Python
 Ingenieria-de-Software-2025-1/
 
-# ignorar archivos de base de datos
+# Ignorar archivos de base de datos
 db.sqlite3*
 
 # Archivos de logs
 backend/*.log
 
-# Ignorar directorio de framework
+# Ignorar directorio de caché de Python
 backend/__pycache__/
 
 # Ignorar archivos de entorno
 backend/.env
 
-# Archivos y directorios generados por WebStorm
-frontend/.idea/
+# Archivos y directorios generados por IDEs como WebStorm / VSCode
+**/.idea/
+**/.vscode/
 *.iml
 
 # Archivos de caché
-frontend/.cache/
+**/.cache/
 
-# Modulo de node 
-node_modules/
-
-# Modulos de node 
-frontend/node_modules/
+# Módulos de Node.js (ignorar node_modules en cualquier subcarpeta)
+**/node_modules/
 
 # Archivos de temporales y backups
 *.swp
 *.swo
 *.bak
-
 
