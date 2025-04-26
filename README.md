@@ -15,6 +15,7 @@ Proyecto desarrollado durante el curso de **Ingeniería de Software I** en la *L
 ![Github NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Github React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Github TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Github Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
 ---
 # Índice
@@ -49,16 +50,16 @@ Proyecto desarrollado durante el curso de **Ingeniería de Software I** en la *L
 - **Lenguaje:** Javascript  
 - **Framework:** React + TailwindCSS  
 - **Gestión de dependencias:** Node.js & npm  
-- **Editor:** WebStorm  
-
+- **Gestor del Servidor:** Vite  
+- **Editor:** VSCode  
 ---
 
 ## 📁 Contenido del Repositorio
 
-- `/backend/` — Código fuente del backend en Python con Django  
-- `/frontend/` — Aplicación React con TailwindCSS y Javascript  
-- `/docs/` — Documentación del proyecto (diagramas, especificaciones, etc.)  
-- `/sql/` — Scripts SQL para la creación de la base de datos  
+- `/backend/` — Código fuente del backend en Python con Django [🔗 Aquí](./backend/)
+- `/frontend/` — Aplicación React con TailwindCSS y Javascript [🔗 Aquí](./frontend/)
+- `/docs/` — Documentación del proyecto (diagramas, especificaciones, etc.)[🔗 Aquí](./docs/)
+- `/sql/` — Scripts SQL para la creación de la base de datos[🔗 Aquí](./sql/)
 
 ---
 
