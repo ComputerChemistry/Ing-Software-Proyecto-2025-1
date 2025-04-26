@@ -74,7 +74,12 @@ Proyecto desarrollado durante el curso de **Ingeniería de Software I** en la *L
 ### ▶️ Backend
 ---
 
-1. Navega hasta el directorio raiz del backend: - `/backend/` 
+1. Clona el Repositorio y Navega hasta el directorio raiz del backend: - `/backend/` 
+
+```bash
+git clone https://github.com/ComputerChemistry/Ing-Software-Proyecto-2025-1.git
+cd Ing-Software-Proyecto-2025-1/backend
+```
 
 2. Instala las dependencias necesarias (si aún no lo has hecho):
 
@@ -185,4 +190,26 @@ Esto levantará el servidor en `http://127.0.0.1:8000/` (por defecto)
 
 ### ▶️ Frontend
 
+--- 
+Para Ejecutar el `frontend` del proyecto hacer lo siguiente: 
 
+1. Clona el Repositorio y Navega hasta el directorio raiz del backend: - `/frontend/` 
+
+```bash
+git clone https://github.com/ComputerChemistry/Ing-Software-Proyecto-2025-1.git
+cd Ing-Software-Proyecto-2025-1/frontend
+```
+
+2. Ejecuta el siguiente comando 
+
+```bash
+npm run dev 
+```
+Esto levantará el servidor en `http://localhost:5173/` (por defecto)
+
+3. Si existe algun error en la ejecucion del proyecto ejecutar el
+   siguiente comando para actualizar las dependencias: 
+
+```bash 
+npm install
+```
