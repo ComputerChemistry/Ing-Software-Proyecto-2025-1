@@ -1,90 +1,82 @@
-import React from "react";
+// src/pages/Home.jsx
+import React, { useEffect, useState } from "react";
+import CafeCard from "../components/CafeCard";
+import Header from "../components/Header";
 
-function Home() {
+import derecho1 from "../assets/tienda_derecho1.jpg";
+import trabajoSocial from "../assets/tienda_trabajo-social.jpg";
+import educacion from "../assets/tiendita_educacion.jpg";
+import derecho2 from "../assets/tienda_derecho2.jpg";
+import medicina1 from "../assets/tienda_medicina1.jpg";
+import medicina2 from "../assets/tienda_medicina2.jpg";
+import civilArqui from "../assets/tienda_civil-arqui.jpg";
+import ingenieriaQuimica from "../assets/tienda_ingenieria-quimica.jpg";
+
+const cafeterias = [
+  { name: "Cafetería Derecho 1", image: derecho1 },
+  { name: "Cafetería Trabajo Social", image: trabajoSocial },
+  { name: "Cafetería Educación", image: educacion },
+  { name: "Cafetería Derecho 2", image: derecho2 },
+  { name: "Cafetería Medicina 1", image: medicina1 },
+  { name: "Cafetería Medicina 2", image: medicina2 },
+  { name: "Cafetería Civil-Arqui", image: civilArqui },
+  { name: "Cafetería Ingeniería Química", image: ingenieriaQuimica },
+];
+
+const Home = () => {
+  const [cafeteriaDestacada, setCafeteriaDestacada] = useState(cafeterias[0]);
+
+  useEffect(() => {
+    const intervalo = setInterval(() => {
+      const random = Math.floor(Math.random() * cafeterias.length);
+      setCafeteriaDestacada(cafeterias[random]);
+    }, 3000);
+    return () => clearInterval(intervalo);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-[#4b3423] text-white font-sans">
-      {/* NAVBAR */}
-      <nav className="fixed top-0 left-0 w-full bg-[#8a745d] shadow-md z-50">
-        <div className="relative max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div style={{ 
+      background: "linear-gradient(to bottom, #4b3423, #5c4430)", 
+      minHeight: "100vh", 
+      color: "white", 
+      paddingTop: "6rem" 
+    }}>
+      <Header />
 
-          {/* LOGO + BOTONES CENTRALES */}
-          <div className="flex items-center gap-10">
-            <div className="flex items-center gap-3">
-              <img
-                src="/src/assets/logo.png"
-                alt="Logo Búho Tragón"
-                className="h-20 w-20 object-contain"
-              />
-              <span className="text-2xl font-bold text-white whitespace-nowrap">
-                El Búho Tragón
-              </span>
-            </div>
+      {/* Cafetería destacada */}
+      <div style={{
+        background: "linear-gradient(to bottom, #8a745d, #a08a72)",
+        margin: "2rem auto",
+        borderRadius: "1rem",
+        maxWidth: "800px",
+        padding: "1.5rem",
+        textAlign: "center"
+      }}>
+        <h2 style={{ fontSize: "2rem", fontWeight: "bold" }}>Cafetería Destacada 📸</h2>
+        <img
+          src={cafeteriaDestacada.image}
+          alt={cafeteriaDestacada.name}
+          style={{ marginTop: "1rem", width: "100%", height: "300px", objectFit: "cover", borderRadius: "1rem" }}
+        />
+        <p style={{ marginTop: "1rem", fontSize: "1.25rem" }}>{cafeteriaDestacada.name}</p>
+      </div>
 
-            {/* Botones centrales */}
-            <div className="flex gap-4">
-              <button className="text-white px-4 py-2 bg-black/40 hover:bg-black/60 rounded-lg transition">
-                Cafeterías
-              </button>
-              <button className="text-white px-4 py-2 bg-black/40 hover:bg-black/60 rounded-lg transition">
-                Facultad
-              </button>
-            </div>
-          </div>
-
-          {/* Botones derecha */}
-          <div className="flex gap-3">
-            <button className="text-white px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition">
-              Login
-            </button>
-            <button className="text-white px-4 py-2 bg-green-600 hover:bg-green-700 rounded-lg transition">
-              Registro
-            </button>
-          </div>
-        </div>
-      </nav>
-
-      {/* ESPACIO PARA CONTENIDO */}
-      <div className="pt-36 px-6">
-        {/* SECCIÓN DESTACADA */}
-        <section className="mb-8">
-          <div className="bg-white/10 backdrop-blur-lg p-6 rounded-xl shadow-lg text-center">
-            <h2 className="text-2xl font-semibold mb-2">Cafetería Destacada 🍽️</h2>
-            <img
-              src="https://via.placeholder.com/600x200"
-              alt="Foto de cafetería"
-              className="w-full rounded-lg object-cover"
+      {/* Cards de cafeterías */}
+      <div style={{ padding: "2rem" }}>
+        <h2 style={{ fontSize: "1.75rem", fontWeight: "bold", marginBottom: "1rem", textAlign: "center" }}>Cafeterías</h2>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "1.5rem", justifyContent: "center" }}>
+          {cafeterias.map((cafeteria, index) => (
+            <CafeCard
+              key={index}
+              name={cafeteria.name}
+              image={cafeteria.image}
+              background="#8a745d"
             />
-            <p className="text-sm mt-3 text-gray-300">
-              Nombre de una cafetería random con su foto
-            </p>
-          </div>
-        </section>
-
-        {/* SECCIÓN DE CARDS */}
-        <section>
-          <h3 className="text-xl font-bold mb-4">Cafeterías</h3>
-          <div className="flex gap-4 overflow-x-auto pb-4">
-            {[1, 2, 3, 4, 5].map((_, i) => (
-              <div
-                key={i}
-                className="min-w-[250px] bg-white/10 backdrop-blur-lg p-4 rounded-lg shadow-lg"
-              >
-                <img
-                  src={`https://via.placeholder.com/250x150?text=Cafetería+${i + 1}`}
-                  alt={`Cafetería ${i + 1}`}
-                  className="rounded mb-2"
-                />
-                <p className="text-lg font-medium">Cafetería {i + 1}</p>
-                <button className="mt-2 text-sm text-blue-400 hover:underline">
-                  Ver más
-                </button>
-              </div>
-            ))}
-          </div>
-        </section>
+          ))}
+        </div>
       </div>
     </div>
   );
-}
+};
 
 export default Home;

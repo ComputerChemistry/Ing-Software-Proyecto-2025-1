@@ -1,26 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-//import Login from './Login.jsx';
+import { BrowserRouter, Routes, Route } from "react-router-dom"; // 👈 Importa Router
 import './index.css';
-//import App from './App.jsx'
-import Home from './pages/Home.jsx'
 
-/*ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Login />
-  </React.StrictMode>
-)
-*/
-
-/*ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-)
-*/
+import Home from './pages/Home.jsx';
+// Si quieres después importar Login o App también lo haces aquí.
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Home />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* Aquí puedes agregar más rutas después, como el login, registro, etc */}
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
-)
+);
