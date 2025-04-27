@@ -7,10 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        cafeoscuro: "#4b3423", // fondo principal
-        cafemedio: "#8a745d",  // navbar o secciones destacadas
+        cafeoscuro: "#4b3423",
+        cafemedio: "#8a745d",
       },
     },
   },
   plugins: [],
-};
+}
