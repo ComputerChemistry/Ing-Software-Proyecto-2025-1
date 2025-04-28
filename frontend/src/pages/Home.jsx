@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import CafeCard from "../components/CafeCard";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 import derecho1 from "../assets/tienda_derecho1.jpg";
 import trabajoSocial from "../assets/tienda_trabajo-social.jpg";
@@ -75,6 +76,7 @@ const Home = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
