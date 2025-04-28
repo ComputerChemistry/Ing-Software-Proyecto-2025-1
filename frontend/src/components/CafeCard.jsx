@@ -1,37 +1,42 @@
 import React from "react";
 
-const CafeCard = ({ name, image }) => {
+const CafeCard = ({ name, image, background }) => {
   return (
     <div style={{
-      background: "#8a745d",
+      background: background || "#8a745d",
       borderRadius: "1rem",
-      overflow: "hidden",
+      padding: "1rem",
       width: "250px",
-      boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
-      transition: "transform 0.3s, box-shadow 0.3s"
+      textAlign: "center",
+      boxShadow: "0 4px 6px rgba(0,0,0,0.2)",
+      transition: "transform 0.3s ease, box-shadow 0.3s ease",
+      cursor: "pointer",
     }}
-    className="card"
+    className="cafeteria-card"
     >
-      <img src={image} alt={name} style={{ width: "100%", height: "150px", objectFit: "cover" }} />
-      <div style={{ padding: "1rem", textAlign: "center" }}>
-        <h3 style={{ fontSize: "1.25rem", fontWeight: "600" }}>{name}</h3>
-        <button style={{
-          marginTop: "0.5rem",
-          backgroundColor: "#e2a660",
-          color: "#4b3423",
-          border: "none",
-          padding: "0.5rem 1rem",
-          borderRadius: "6px",
-          fontWeight: "600",
-          display: "inline-flex",
-          alignItems: "center",
-          gap: "0.5rem",
-          cursor: "pointer",
-          transition: "all 0.3s ease"
-        }}>
-          Ver más ➡️
-        </button>
-      </div>
+      <img
+        src={image}
+        alt={name}
+        style={{
+          width: "100%",
+          height: "150px",
+          objectFit: "cover",
+          borderRadius: "0.75rem",
+          marginBottom: "0.75rem",
+        }}
+      />
+      <p style={{ fontSize: "1.1rem", fontWeight: "600" }}>{name}</p>
+      <p style={{
+        fontSize: "0.9rem",
+        marginTop: "0.5rem",
+        color: "#f5c16c",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "0.3rem"
+      }}>
+        Presione para ver más <span style={{ fontSize: "1.2rem" }}>☕</span>
+      </p>
     </div>
   );
 };
