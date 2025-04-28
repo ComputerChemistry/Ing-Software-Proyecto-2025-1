@@ -2,8 +2,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -41,22 +42,27 @@ h1 {
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
+  background-color: #f5c16c;
+  color: #4b3423;
   padding: 0.6em 1.2em;
   font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 button:hover {
-  border-color: #646cff;
+  background-color: #e6af4b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0,0,0,0.3);
 }
+
 button:focus,
 button:focus-visible {
-  outline: 4px solid #646cff;
+  outline: 4px solid #f5c16c88;
 }
 
 @media (prefers-color-scheme: light) {
