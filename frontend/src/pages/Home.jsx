@@ -14,12 +14,12 @@ import civilArqui from "../assets/tienda_civil-arqui.jpg";
 import ingenieriaQuimica from "../assets/tienda_ingenieria-quimica.jpg";
 
 const cafeterias = [
-  { name: "Cafetería Derecho 1", image: derecho1 },
+  { name: "Cafetería Derecho", image: derecho1 },
   { name: "Cafetería Trabajo Social", image: trabajoSocial },
   { name: "Cafetería Educación", image: educacion },
-  { name: "Cafetería Derecho 2", image: derecho2 },
-  { name: "Cafetería Medicina 1", image: medicina1 },
-  { name: "Cafetería Medicina 2", image: medicina2 },
+  { name: "Cafetería Psicología/Comunicación", image: derecho2 },
+  { name: "Cafetería Medicina", image: medicina1 },
+  { name: "Segunda Cafetería Medicina", image: medicina2 },
   { name: "Cafetería Civil-Minas", image: civilArqui },
   { name: "Cafetería Ingeniería Química", image: ingenieriaQuimica },
 ];
@@ -40,12 +40,13 @@ const Home = () => {
     <div style={{ 
       margin: 0,
       minHeight: "100vh",
-      background: "linear-gradient(-45deg, #1d1e33, #2a2d5a, #4b4e91)",
+      background: "linear-gradient(-45deg, #161b33, #1f2457, #2a3558)",
       backgroundSize: "600% 600%",
       animation: "backgroundAnimation 30s ease infinite",
       color: "white",
       paddingTop: "6rem"
-    }}>        
+    }}>
+            
     
       <Header />
       

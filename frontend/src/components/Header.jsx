@@ -5,18 +5,19 @@ import logo from "../assets/logo.png";
 const Header = () => {
   return (
     <header style={{
-        background: "linear-gradient(-45deg, rgba(46,48,85,0.85), rgba(59,62,109,0.85), rgba(90,93,172,0.85))",
+        background: "linear-gradient(-45deg, rgba(22,27,51,0.85), rgba(31,36,87,0.85), rgba(42,53,88,0.85))",
         boxShadow: "0 4px 6px rgba(0, 0, 0, 0.2)",
         padding: "1rem 2rem",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        backdropFilter: "blur(6px)", // El blur sigue IGUALITO
+        backdropFilter: "blur(6px)",
         position: "fixed",
         top: 0,
         width: "100%",
         zIndex: 50
       }}>
+      
       
       {/* Logo y nombre */}
       <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
