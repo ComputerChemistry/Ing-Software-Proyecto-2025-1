@@ -46,7 +46,7 @@ const CafeCard = ({ name, image }) => {
         justifyContent: "center",
         gap: "0.3rem"
       }}>
-        Presione para ver más <span style={{ fontSize: "1.2rem" }}>☕</span>
+        <span style={{ fontSize: "1.2rem" }}>Presione para ver el menú...</span>
       </p>
     </div>
   );

@@ -40,13 +40,12 @@ const Home = () => {
     <div style={{ 
       margin: 0,
       minHeight: "100vh",
-      background: "linear-gradient(-45deg, #5a3b85, #374b7a, #445160, #1c2430)",
+      background: "linear-gradient(-45deg, #1d1e33, #2a2d5a, #4b4e91)",
       backgroundSize: "600% 600%",
       animation: "backgroundAnimation 30s ease infinite",
       color: "white",
       paddingTop: "6rem"
-    }}>
-    
+    }}>        
     
       <Header />
       

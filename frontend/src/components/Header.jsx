@@ -1,4 +1,3 @@
-// src/components/Header.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
@@ -6,19 +5,18 @@ import logo from "../assets/logo.png";
 const Header = () => {
   return (
     <header style={{
-        background: "#3b5f82", // Azul sólido, más oscuro que #4c789b
+        background: "linear-gradient(-45deg, rgba(46,48,85,0.85), rgba(59,62,109,0.85), rgba(90,93,172,0.85))",
         boxShadow: "0 4px 6px rgba(0, 0, 0, 0.2)",
         padding: "1rem 2rem",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
+        backdropFilter: "blur(6px)", // El blur sigue IGUALITO
         position: "fixed",
         top: 0,
         width: "100%",
         zIndex: 50
       }}>
-      
-      
       
       {/* Logo y nombre */}
       <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
@@ -26,7 +24,6 @@ const Header = () => {
         <span style={{ fontSize: "1.8rem", fontWeight: "bold", color: "white" }}>
           El Búho Tragón
         </span>
-
         {/* Botones Cafeterías y Facultad */}
         <div style={{ display: "flex", gap: "0.5rem", marginLeft: "2rem" }}>
           <Link to="/cafeterias">
@@ -52,16 +49,16 @@ const Header = () => {
 };
 
 const buttonStyle = {
-  backgroundColor: "#92b5c4",
-  color: "#1e2e3e",
+  backgroundColor: "#4b4e91", // color que conecta con el degradado
+  color: "#ffffff",
   padding: "0.5rem 1rem",
   borderRadius: "0.5rem",
   border: "none",
   cursor: "pointer",
   fontWeight: "bold",
   fontSize: "1rem",
-  boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
-  transition: "background-color 0.3s",
+  boxShadow: "0 2px 6px rgba(0,0,0,0.3)",
+  transition: "background 0.3s ease"
 };
 
 export default Header;
