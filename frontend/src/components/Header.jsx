@@ -6,7 +6,7 @@ import logo from "../assets/logo.png";
 const Header = () => {
   return (
     <header style={{
-      backgroundColor: "rgba(162, 69, 2, 0.85)", // #A24502
+      backgroundColor: "rgba(6, 13, 8, 0.85)", // #060D08
       padding: "1rem 2rem",
       display: "flex",
       alignItems: "center",
@@ -45,7 +45,7 @@ const Header = () => {
 };
 
 const buttonStyle = {
-  backgroundColor: "#CD8A39", // Raw sienna
+  backgroundColor: "#CD8A39", // Raw Sienna (intermedio entre ambos extremos)
   color: "#ffffff",
   padding: "0.5rem 1rem",
   borderRadius: "0.5rem",
