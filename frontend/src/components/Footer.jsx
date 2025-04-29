@@ -5,7 +5,7 @@ import unisonLogo from "../assets/unison-logo.png";
 const Footer = () => {
   return (
     <footer style={{
-      backgroundColor: "rgba(6, 13, 8, 0.85)", // #060D08
+      backgroundColor: "rgba(162, 69, 2, 0.85)", // #A24502
       color: "white",
       textAlign: "center",
       padding: "1.5rem 1rem",
