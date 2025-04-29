@@ -5,7 +5,7 @@ import unisonLogo from "../assets/unison-logo.png";
 const Footer = () => {
   return (
     <footer style={{
-      background: "linear-gradient(-45deg, rgba(22,27,51,0.85), rgba(31,36,87,0.85), rgba(42,53,88,0.85))",
+      backgroundColor: "rgba(6, 13, 8, 0.85)", // #060D08
       color: "white",
       textAlign: "center",
       padding: "1.5rem 1rem",
@@ -15,10 +15,8 @@ const Footer = () => {
       flexDirection: "column",
       alignItems: "center",
       gap: "0.75rem",
-      backdropFilter: "blur(6px)",
-      boxShadow: "0 -4px 6px rgba(0,0,0,0.2)"
+      backdropFilter: "blur(6px)"
     }}>
-    
       <img 
         src={unisonLogo} 
         alt="Logo UNISON" 

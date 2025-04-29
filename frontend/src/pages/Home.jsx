@@ -40,14 +40,12 @@ const Home = () => {
     <div style={{ 
       margin: 0,
       minHeight: "100vh",
-      background: "linear-gradient(-45deg, #161b33, #1f2457, #2a3558)",
-      backgroundSize: "600% 600%",
-      animation: "backgroundAnimation 30s ease infinite",
+      background: "linear-gradient(to bottom, #A24502, #CD8A39, #595D2B, #1D2A10, #060D08)",
+      backgroundSize: "100% 100%",
       color: "white",
       paddingTop: "6rem"
     }}>
-            
-    
+             
       <Header />
       
       {/* Cafetería destacada */}
