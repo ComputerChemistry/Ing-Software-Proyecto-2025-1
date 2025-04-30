@@ -24,6 +24,10 @@ backend/*.log
 # Ignorar directorio de caché de Python
 backend/__pycache__/
 
+# Ignorar caché de Python
+__pycache__/
+*.pyc
+
 # Ignorar archivos de entorno
 backend/.env
 
