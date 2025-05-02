@@ -17,21 +17,26 @@ const Header = () => {
       width: "100%",
       zIndex: 50
     }}>
+      
+      {/* IZQUIERDA: Botones de navegación */}
+      <div style={{ display: "flex", gap: "0.5rem" }}>
+        <Link to="/cafeterias">
+          <button style={buttonStyle}>Cafeterías</button>
+        </Link>
+        <Link to="/facultad">
+          <button style={buttonStyle}>Facultad</button>
+        </Link>
+      </div>
+
+      {/* CENTRO: Logo y nombre */}
       <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
         <img src={logo} alt="Logo El Búho Tragón" style={{ height: "50px", width: "50px" }} />
         <span style={{ fontSize: "1.8rem", fontWeight: "bold", color: "white" }}>
           El Búho Tragón
         </span>
-        <div style={{ display: "flex", gap: "0.5rem", marginLeft: "2rem" }}>
-          <Link to="/cafeterias">
-            <button style={buttonStyle}>Cafeterías</button>
-          </Link>
-          <Link to="/facultad">
-            <button style={buttonStyle}>Facultad</button>
-          </Link>
-        </div>
       </div>
 
+      {/* DERECHA: Login y Registro */}
       <div style={{ display: "flex", gap: "0.5rem" }}>
         <Link to="/login">
           <button style={buttonStyle}>Login</button>
@@ -45,7 +50,7 @@ const Header = () => {
 };
 
 const buttonStyle = {
-  backgroundColor: "#CD8A39", // Raw Sienna (intermedio entre ambos extremos)
+  backgroundColor: "#CD8A39", // Raw Sienna
   color: "#ffffff",
   padding: "0.5rem 1rem",
   borderRadius: "0.5rem",

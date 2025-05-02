@@ -28,6 +28,16 @@ const Home = () => {
   const [cafeteriaDestacada, setCafeteriaDestacada] = useState(cafeterias[0]);
   const [hover, setHover] = useState(false);
 
+  const siguienteCafeteria = () => {
+    const index = cafeterias.indexOf(cafeteriaDestacada);
+    setCafeteriaDestacada(cafeterias[(index + 1) % cafeterias.length]);
+  };
+
+  const anteriorCafeteria = () => {
+    const index = cafeterias.indexOf(cafeteriaDestacada);
+    setCafeteriaDestacada(cafeterias[(index - 1 + cafeterias.length) % cafeterias.length]);
+  };
+
   useEffect(() => {
     const intervalo = setInterval(() => {
       const random = Math.floor(Math.random() * cafeterias.length);
@@ -44,9 +54,7 @@ const Home = () => {
       backgroundSize: "100% 100%",
       color: "white",
       paddingTop: "6rem"
-    }}>
-    
-             
+    }}>    
       <Header />
       
       {/* Cafetería destacada */}
@@ -56,7 +64,6 @@ const Home = () => {
         style={{
           backdropFilter: "blur(4px)",                // exactamente tu .mi-clase
           backgroundColor: "rgba(0, 0, 0, 0.3)",       // exactamente tu .mi-clase
-          // borderBottom: "2px solid rgba(255, 255, 255, 0.3)", ❌ Eliminado porque molesta
           boxShadow: hover 
             ? "0 8px 20px rgba(0, 0, 0, 0.3)"         // Hover más intenso
             : "0 4px 10px rgba(0, 0, 0, 0.2)",         // Normal más ligero
@@ -94,6 +101,12 @@ const Home = () => {
           }}
         />
         <p style={{ marginTop: "1rem", fontSize: "1.25rem" }}>{cafeteriaDestacada.name}</p>
+
+        {/* Botones para navegar entre cafeterías */}
+        <div style={{ display: "flex", justifyContent: "space-between", width: "100%", marginTop: "1rem" }}>
+          <button onClick={anteriorCafeteria} style={buttonStyle}>Anterior</button>
+          <button onClick={siguienteCafeteria} style={buttonStyle}>Siguiente</button>
+        </div>
       </div>
 
       {/* Cards de cafeterías */}
@@ -114,6 +127,18 @@ const Home = () => {
       <Footer />
     </div>
   );
+};
+
+const buttonStyle = {
+  backgroundColor: "#CD8A39", // Raw Sienna
+  color: "#ffffff",
+  padding: "0.5rem 1rem",
+  borderRadius: "0.5rem",
+  border: "none",
+  cursor: "pointer",
+  fontWeight: "bold",
+  fontSize: "1rem",
+  transition: "background 0.3s ease"
 };
 
 export default Home;
