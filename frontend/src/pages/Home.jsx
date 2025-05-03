@@ -50,8 +50,9 @@ const Home = () => {
     <div style={{ 
       margin: 0,
       minHeight: "100vh",
-      background: "linear-gradient(to top, #A24502, #CD8A39, #595D2B, #1D2A10, #060D08)",
-      backgroundSize: "100% 100%",
+      background: "linear-gradient(-45deg, #161b33, #1f2457, #2a3558)",
+      backgroundSize: "600% 600%",
+      animation: "backgroundAnimation 30s ease infinite",
       color: "white",
       paddingTop: "6rem"
     }}>    
@@ -62,11 +63,11 @@ const Home = () => {
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         style={{
-          backdropFilter: "blur(4px)",                // exactamente tu .mi-clase
-          backgroundColor: "rgba(0, 0, 0, 0.3)",       // exactamente tu .mi-clase
+          backdropFilter: "blur(4px)",
+          backgroundColor: "rgba(0, 0, 0, 0.3)",
           boxShadow: hover 
-            ? "0 8px 20px rgba(0, 0, 0, 0.3)"         // Hover más intenso
-            : "0 4px 10px rgba(0, 0, 0, 0.2)",         // Normal más ligero
+            ? "0 8px 20px rgba(0, 0, 0, 0.3)"
+            : "0 4px 10px rgba(0, 0, 0, 0.2)",
           borderRadius: "0.75rem",
           maxWidth: "100%",
           marginLeft: "auto",
@@ -118,7 +119,7 @@ const Home = () => {
               key={index}
               name={cafeteria.name}
               image={cafeteria.image}
-              background="#507896" // Color azul medio para las cards
+              background="#4b4e91"
             />
           ))}
         </div>
@@ -130,7 +131,7 @@ const Home = () => {
 };
 
 const buttonStyle = {
-  backgroundColor: "#CD8A39", // Raw Sienna
+  backgroundColor: "#4b4e91",
   color: "#ffffff",
   padding: "0.5rem 1rem",
   borderRadius: "0.5rem",

@@ -6,7 +6,8 @@ import logo from "../assets/logo.png";
 const Header = () => {
   return (
     <header style={{
-      backgroundColor: "rgba(6, 13, 8, 0.85)", // #060D08
+      background: "linear-gradient(-45deg, rgba(22,27,51,0.85), rgba(31,36,87,0.85), rgba(42,53,88,0.85))",
+      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.2)",
       padding: "1rem 2rem",
       display: "flex",
       alignItems: "center",
@@ -17,7 +18,6 @@ const Header = () => {
       width: "100%",
       zIndex: 50
     }}>
-      
       {/* IZQUIERDA: Botones de navegación */}
       <div style={{ display: "flex", gap: "0.5rem" }}>
         <Link to="/cafeterias">
@@ -29,12 +29,12 @@ const Header = () => {
       </div>
 
       {/* CENTRO: Logo y nombre */}
-      <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+      <Link to="/" style={{ display: "flex", alignItems: "center", gap: "1rem", textDecoration: "none" }}>
         <img src={logo} alt="Logo El Búho Tragón" style={{ height: "50px", width: "50px" }} />
         <span style={{ fontSize: "1.8rem", fontWeight: "bold", color: "white" }}>
           El Búho Tragón
         </span>
-      </div>
+      </Link>
 
       {/* DERECHA: Login y Registro */}
       <div style={{ display: "flex", gap: "0.5rem" }}>
@@ -50,7 +50,7 @@ const Header = () => {
 };
 
 const buttonStyle = {
-  backgroundColor: "#CD8A39", // Raw Sienna
+  backgroundColor: "#4b4e91",
   color: "#ffffff",
   padding: "0.5rem 1rem",
   borderRadius: "0.5rem",

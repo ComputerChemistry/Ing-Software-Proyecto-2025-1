@@ -1,3 +1,4 @@
+// src/pages/Login.jsx
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -9,9 +10,9 @@ const Login = () => {
       height: "100vh",
       margin: 0,
       padding: 0,
-      background: "linear-gradient(to bottom, #A24502, #CD8A39, #595D2B)",
-      backgroundSize: "cover",
-      backgroundRepeat: "no-repeat",
+      background: "linear-gradient(-45deg, #161b33, #1f2457, #2a3558)",
+      backgroundSize: "600% 600%",
+      animation: "backgroundAnimation 30s ease infinite",
       color: "white",
       display: "flex",
       flexDirection: "column",
@@ -91,7 +92,7 @@ const buttonStyle = {
   width: "100%",
   marginTop: "1.5rem",
   padding: "0.75rem",
-  backgroundColor: "#CD8A39",
+  backgroundColor: "#4b4e91",
   color: "#fff",
   fontWeight: "bold",
   border: "none",
