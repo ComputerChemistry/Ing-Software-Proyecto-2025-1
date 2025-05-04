@@ -53,7 +53,7 @@ const Login = () => {
             </label>
             <input
               type="text"
-              placeholder="Ingresa tu usuario"
+              placeholder="👤 Ingresa tu usuario"
               style={inputStyle}
             />
 
@@ -62,7 +62,7 @@ const Login = () => {
             </label>
             <input
               type="password"
-              placeholder="Ingresa tu contraseña"
+              placeholder="🔒 Ingresa tu contraseña"
               style={inputStyle}
             />
 

@@ -53,20 +53,39 @@ const Registro = () => {
             <label style={{ display: "block", marginBottom: "0.5rem", fontWeight: "bold" }}>
               Nombre de usuario
             </label>
-            <input
-              type="text"
-              placeholder="usuario123"
-              style={inputStyle}
-            />
+            <div style={{ position: "relative" }}>
+              <span style={{
+                position: "absolute",
+                left: "0.75rem",
+                top: "50%",
+                transform: "translateY(-50%)",
+                fontSize: "1.2rem"
+              }}>👤</span>
+              <input
+                type="text"
+                placeholder="usuario123"
+                style={{ ...inputStyle, paddingLeft: "2.5rem" }}
+              />
+            </div>
 
             <label style={{ display: "block", margin: "1rem 0 0.5rem", fontWeight: "bold" }}>
               Contraseña
             </label>
-            <input
-              type={mostrarContrasena ? "text" : "password"}
-              placeholder="Ingresa tu contraseña"
-              style={inputStyle}
-            />
+            <div style={{ position: "relative" }}>
+              <span style={{
+                position: "absolute",
+                left: "0.75rem",
+                top: "50%",
+                transform: "translateY(-50%)",
+                fontSize: "1.2rem"
+              }}>🔒</span>
+              <input
+                type={mostrarContrasena ? "text" : "password"}
+                placeholder="Ingresa tu contraseña"
+                style={{ ...inputStyle, paddingLeft: "2.5rem" }}
+              />
+            </div>
+
             <div style={{ marginTop: "0.5rem", textAlign: "left" }}>
               <label style={{ fontSize: "0.85rem" }}>
                 <input

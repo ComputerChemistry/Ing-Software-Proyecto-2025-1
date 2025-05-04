@@ -57,7 +57,7 @@ const Home = () => {
       paddingTop: "6rem"
     }}>    
       <Header />
-      
+
       {/* Cafetería destacada */}
       <div 
         onMouseEnter={() => setHover(true)}
@@ -69,45 +69,84 @@ const Home = () => {
             ? "0 8px 20px rgba(0, 0, 0, 0.3)"
             : "0 4px 10px rgba(0, 0, 0, 0.2)",
           borderRadius: "0.75rem",
-          maxWidth: "100%",
           marginLeft: "auto",
           marginRight: "auto",
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "center",
           alignItems: "center",
-          paddingLeft: "2rem",
-          paddingRight: "2rem",
-          paddingTop: "1rem",
-          paddingBottom: "1rem",
-          color: "white",
           flexDirection: "column",
+          padding: "2rem",
           textAlign: "center",
           marginTop: "2rem",
-          width: "80%",
+          width: "90%",
+          maxWidth: "900px",
+          position: "relative",
           transition: "all 0.3s ease",
           transform: hover ? "translateY(-4px)" : "translateY(0)"
         }}
       >
         <h2 style={{ fontSize: "2rem", fontWeight: "bold" }}>Cafetería Destacada 📸</h2>
-        <img
-          src={cafeteriaDestacada.image}
-          alt={cafeteriaDestacada.name}
-          style={{ 
-            marginTop: "1rem", 
-            width: "100%", 
-            maxWidth: "600px",
-            height: "300px", 
-            objectFit: "cover", 
-            borderRadius: "1rem" 
-          }}
-        />
-        <p style={{ marginTop: "1rem", fontSize: "1.25rem" }}>{cafeteriaDestacada.name}</p>
 
-        {/* Botones para navegar entre cafeterías */}
-        <div style={{ display: "flex", justifyContent: "space-between", width: "100%", marginTop: "1rem" }}>
-          <button onClick={anteriorCafeteria} style={buttonStyle}>Anterior</button>
-          <button onClick={siguienteCafeteria} style={buttonStyle}>Siguiente</button>
+        <div style={{ position: "relative", width: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <button 
+            onClick={anteriorCafeteria} 
+            style={{
+              position: "absolute",
+              left: "-1.5rem",
+              backgroundColor: "#1e254f",
+              border: "none",
+              borderRadius: "50%",
+              width: "40px",
+              height: "40px",
+              fontSize: "1.5rem",
+              color: "white",
+              cursor: "pointer",
+              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center"
+            }}
+          >
+            ◀
+          </button>
+
+          <img
+            src={cafeteriaDestacada.image}
+            alt={cafeteriaDestacada.name}
+            style={{ 
+              width: "100%", 
+              maxWidth: "600px",
+              height: "300px", 
+              objectFit: "cover", 
+              borderRadius: "1rem",
+              margin: "0 auto"
+            }}
+          />
+
+          <button 
+            onClick={siguienteCafeteria} 
+            style={{
+              position: "absolute",
+              right: "-1.5rem",
+              backgroundColor: "#1e254f",
+              border: "none",
+              borderRadius: "50%",
+              width: "40px",
+              height: "40px",
+              fontSize: "1.5rem",
+              color: "white",
+              cursor: "pointer",
+              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center"
+            }}
+          >
+            ▶
+          </button>
         </div>
+
+        <p style={{ marginTop: "1rem", fontSize: "1.25rem" }}>{cafeteriaDestacada.name}</p>
       </div>
 
       {/* Cards de cafeterías */}
@@ -124,22 +163,10 @@ const Home = () => {
           ))}
         </div>
       </div>
-      
+
       <Footer />
     </div>
   );
-};
-
-const buttonStyle = {
-  backgroundColor: "#4b4e91",
-  color: "#ffffff",
-  padding: "0.5rem 1rem",
-  borderRadius: "0.5rem",
-  border: "none",
-  cursor: "pointer",
-  fontWeight: "bold",
-  fontSize: "1rem",
-  transition: "background 0.3s ease"
 };
 
 export default Home;
