@@ -1,11 +1,14 @@
 // src/components/CafeCard.jsx
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Importante
 
-const CafeCard = ({ name, image }) => {
+const CafeCard = ({ name, image, path }) => {
   const [hover, setHover] = useState(false);
+  const navigate = useNavigate(); // Hook para navegar
 
   return (
     <div
+      onClick={() => navigate(path)} // Redirección al hacer clic
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       style={{
@@ -40,7 +43,7 @@ const CafeCard = ({ name, image }) => {
       <p style={{
         fontSize: "0.9rem",
         marginTop: "0.5rem",
-        color: "#60a5fa", // azul tenue para subtítulo
+        color: "#60a5fa",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",

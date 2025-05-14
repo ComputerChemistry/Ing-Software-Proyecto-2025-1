@@ -2,7 +2,7 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import psicologiaImg from "../assets/tienda_derecho2.jpg";
+import psicologiaImg from "/Historia1Card.jpeg";
 
 const menuItems = [
   { nombre: "Hamburguesas a la Freud con papas reprimidas", precio: 85 },

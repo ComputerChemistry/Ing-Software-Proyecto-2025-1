@@ -1,5 +1,7 @@
 from rest_framework import serializers
 from rest_framework import viewsets
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import viewsets, filters
 from rest_framework import generics, filters
 from .models import Tienditas, Facultades, Menus, Usuarios
 from .serializers import TienditasSerializer, FacultadesSerializer, MenusSerializer, UsuariosSerializer
@@ -77,12 +79,19 @@ def login_view(request):
             'error': f'Error en el servidor: {str(e)}'
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-class MenusViewSet(viewsets.ModelViewSet): 
+
+class MenusViewSet(viewsets.ModelViewSet):
     queryset = Menus.objects.all()
     serializer_class = MenusSerializer
-    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
-    search_fields = ['nombre']
-    ordering_fields = ['nombre']
+
+    filter_backends = [
+        DjangoFilterBackend,     
+        filters.SearchFilter,    
+        filters.OrderingFilter,  
+    ]
+    filterset_fields = ['id_tiendita']
+    search_fields    = ['nombre']
+    ordering_fields  = ['nombre']
 
 class TienditasViewSet(viewsets.ModelViewSet):
     queryset = Tienditas.objects.all()

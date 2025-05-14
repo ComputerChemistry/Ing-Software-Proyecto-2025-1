@@ -1,29 +1,23 @@
 // src/pages/Derecho.jsx
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Derecho1 from "../assets/tienda_derecho1.jpg";
 
-const Derecho = () => {
- const [menuItems, setMenuItems] = useState([]);
-  const [loading, setLoading] = useState(true);
+const menuItems = [
+  { nombre: "Tamal de aire con esencia de justicia social", precio: 42 },
+  { nombre: "Quesadilla de tofu revolucionario", precio: 38 },
+  { nombre: "Café de lágrimas colectivas", precio: 25 },
+  { nombre: "Pan con pan porque se acabó el presupuesto", precio: 12 },
+  { nombre: "Sopa de debates acalorados", precio: 33 },
+  { nombre: "Sandwich de empatía vegana", precio: 50 },
+  { nombre: "Ensalada de derechos humanos", precio: 45 },
+  { nombre: "Croquetas de Marx", precio: 60 },
+  { nombre: "Pizza con piña consentida", precio: 48 },
+  { nombre: "Jugo de resiliencia", precio: 18 },
+];
 
-  useEffect(() => {
-    fetch("http://localhost:8000/api/Menus/?id_tiendita=1")
-      .then(response => {
-        if (!response.ok) throw new Error("Error al obtener el menú");
-        return response.json();
-      })
-      .then(data => {
-        setMenuItems(data);
-        setLoading(false);
-      })
-      .catch(error => {
-        console.error("Error al cargar el menú:", error);
-        setLoading(false);
-      });
-  }, []);
-
+const Matematicas = () => {
   return (
     <div style={{
       minHeight: "100vh",
@@ -50,7 +44,7 @@ const Derecho = () => {
           justifyContent: "center",
           marginBottom: "2rem"
         }}>
-          <img src={Derecho1} alt="Cafetería Trabajo Social" style={{
+          <img src={Derecho1} alt="Cafetería Matematicas" style={{
             width: "100%",
             maxWidth: "800px",
             height: "auto",
@@ -89,4 +83,4 @@ const Derecho = () => {
   );
 };
 
-export default Derecho;
+export default Matematicas;

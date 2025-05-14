@@ -1,23 +1,29 @@
 // src/pages/TrabajoSocial.jsx
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import trabajoSocialImg from "../assets/tienda_trabajo-social.jpg";
 
-const menuItems = [
-  { nombre: "Tamal de aire con esencia de justicia social", precio: 42 },
-  { nombre: "Quesadilla lgbtq+", precio: 38 },
-  { nombre: "Café de lágrimas colectivas", precio: 25 },
-  { nombre: "Pan con nada porque se acabó el presupuesto", precio: 12 },
-  { nombre: "Agua con un toque de marxismo", precio: 18 },
-  { nombre: "Onigiri de lucha obrera", precio: 47 },
-  { nombre: "Mollete dialectical", precio: 50 },
-  { nombre: "Sopa de indignación estructural", precio: 60 },
-  { nombre: "Pizza pan con conciencia de género", precio: 55 },
-  { nombre: "Boneless de conciencia de clase", precio: 65 },
-];
-
 const TrabajoSocial = () => {
+  const [menuItems, setMenuItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/api/Menus/?id_tiendita=2")
+      .then(response => {
+        if (!response.ok) throw new Error("Error al obtener el menú");
+        return response.json();
+      })
+      .then(data => {
+        setMenuItems(data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error("Error al cargar el menú:", error);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <div style={{
       minHeight: "100vh",
@@ -39,22 +45,29 @@ const TrabajoSocial = () => {
         <h1 style={{ fontSize: "2rem", fontWeight: "bold", textAlign: "center", marginBottom: "1rem" }}>
           Cafetería Trabajo Social
         </h1>
+
         <div style={{
           display: "flex",
           justifyContent: "center",
           marginBottom: "2rem"
         }}>
-          <img src={trabajoSocialImg} alt="Cafetería Trabajo Social" style={{
-            width: "100%",
-            maxWidth: "800px",
-            height: "auto",
-            borderRadius: "0.75rem",
-            boxShadow: "0 8px 20px rgba(0, 0, 0, 0.5)",
-            objectFit: "contain"
-          }} />
+          <img
+            src={trabajoSocialImg}
+            alt="Cafetería Trabajo Social"
+            style={{
+              width: "100%",
+              maxWidth: "800px",
+              height: "auto",
+              borderRadius: "0.75rem",
+              boxShadow: "0 8px 20px rgba(0, 0, 0, 0.5)",
+              objectFit: "contain"
+            }}
+          />
         </div>
 
-        <h2 style={{ fontSize: "1.5rem", textAlign: "center", marginBottom: "1rem" }}>Menú</h2>
+        <h2 style={{ fontSize: "1.5rem", textAlign: "center", marginBottom: "1rem" }}>
+          Menú
+        </h2>
         <div style={{
           maxWidth: "600px",
           margin: "0 auto",
@@ -64,17 +77,31 @@ const TrabajoSocial = () => {
           backdropFilter: "blur(6px)",
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.4)"
         }}>
-          {menuItems.map((item, index) => (
-            <div key={index} style={{
-              display: "flex",
-              justifyContent: "space-between",
-              borderBottom: "1px solid rgba(255,255,255,0.1)",
-              padding: "0.5rem 0"
-            }}>
-              <span>{item.nombre}</span>
-              <span>${item.precio}</span>
-            </div>
-          ))}
+          {loading ? (
+            <p style={{ textAlign: "center" }}>Cargando menú...</p>
+          ) : menuItems.length === 0 ? (
+            <p style={{ textAlign: "center" }}>No hay items en el menú.</p>
+          ) : (
+            menuItems.map(item => (
+              <div
+                key={item.id_menu}
+                style={{
+                  padding: "0.5rem 0",
+                  borderBottom: "1px solid rgba(255,255,255,0.1)"
+                }}
+              >
+                <div style={{ display: "flex", justifyContent: "space-between", fontWeight: "bold" }}>
+                  <span>{item.nombre}</span>
+                  <span>${parseFloat(item.precio).toFixed(2)}</span>
+                </div>
+                {item.descripcion && (
+                  <p style={{ margin: 0, fontSize: "0.85rem", color: "#ccc" }}>
+                    {item.descripcion}
+                  </p>
+                )}
+              </div>
+            ))
+          )}
         </div>
       </main>
 

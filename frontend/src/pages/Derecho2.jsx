@@ -2,14 +2,14 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Derecho1 from "../assets/tienda_derecho1.jpg";
+import Derecho2 from "../assets/tienda_derecho2.jpg";
 
 const Derecho = () => {
  const [menuItems, setMenuItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/Menus/?id_tiendita=1")
+    fetch("http://localhost:8000/api/Menus/?id_tiendita=4")
       .then(response => {
         if (!response.ok) throw new Error("Error al obtener el menú");
         return response.json();
@@ -43,14 +43,14 @@ const Derecho = () => {
 
       <main style={{ flexGrow: 1, padding: "2rem", paddingTop: "7rem" }}>
         <h1 style={{ fontSize: "2rem", fontWeight: "bold", textAlign: "center", marginBottom: "1rem" }}>
-          Cafetería Derecho1
+          Cafetería Derecho 2
         </h1>
         <div style={{
           display: "flex",
           justifyContent: "center",
           marginBottom: "2rem"
         }}>
-          <img src={Derecho1} alt="Cafetería Trabajo Social" style={{
+          <img src={Derecho2} alt="Cafetería Trabajo Social" style={{
             width: "100%",
             maxWidth: "800px",
             height: "auto",
@@ -88,5 +88,4 @@ const Derecho = () => {
     </div>
   );
 };
-
-export default Derecho;
+export default Derecho2;

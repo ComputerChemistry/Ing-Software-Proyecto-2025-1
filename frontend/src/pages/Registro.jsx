@@ -8,18 +8,21 @@ const Registro = () => {
 
   return (
     <div style={{
-      minHeight: "100vh",
-      width: "100vw",
       margin: 0,
       padding: 0,
+      width: "100vw", // Usar el 100% del viewport width
+      minHeight: "100vh",
+      background: "linear-gradient(-45deg, #161b33, #1f2457, #2a3558)",
+      backgroundSize: "100% 100%", // Tamaño fijo, sin animación
+      color: "white",
+      paddingTop: "3.2rem", // Ajustado para la altura del header
       display: "flex",
       flexDirection: "column",
-      justifyContent: "space-between",
-      background: "linear-gradient(-45deg, #161b33, #1f2457, #2a3558)",
-      backgroundSize: "600% 600%",
-      animation: "backgroundAnimation 30s ease infinite",
-      color: "white"
-    }}>
+      alignItems: "center",
+      position: "relative",
+      overflow: "hidden",
+      boxSizing: "border-box" 
+    }}>      
       <Header />
 
       <main style={{
@@ -105,7 +108,6 @@ const Registro = () => {
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 };
