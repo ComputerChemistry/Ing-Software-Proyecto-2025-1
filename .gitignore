@@ -30,6 +30,7 @@ __pycache__/
 
 # Ignorar archivos de entorno
 backend/.env
+frontend/.env
 
 # Archivos y directorios generados por IDEs como WebStorm / VSCode
 **/.idea/
