@@ -1,6 +1,7 @@
 # 🚀 Ingeniería de Software I — Proyecto 2025-1
 
-Proyecto desarrollado durante el curso de **Ingeniería de Software I** en la *Licenciatura en Ciencias de la Computación* (semestre 2025-1).  
+Proyecto desarrollado durante el curso de **Ingeniería de Software I** en la *Licenciatura en Ciencias de la Computación* (semestre 2025-1).
+
 
 ---
 
