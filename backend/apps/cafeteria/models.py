@@ -46,14 +46,16 @@ class Tienditas(models.Model):
 class Usuarios(models.Model):
     id_usuarios = models.AutoField(primary_key=True)
     nombre_usuario = models.CharField(max_length=255)
-    email = models.CharField(unique=True, max_length=255)
     contrasena = models.CharField(max_length=255)
     es_admin = models.IntegerField(blank=True, null=True)
     fecha_registro = models.DateTimeField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'Usuarios'
+
+    @property
+    def id(self):
+        return self.id_usuarios
 
 
 class AuthGroup(models.Model):

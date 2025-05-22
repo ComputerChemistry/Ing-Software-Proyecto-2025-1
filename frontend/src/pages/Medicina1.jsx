@@ -1,23 +1,30 @@
 // src/pages/Medicina1.jsx
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import medicinaImg from "../assets/tienda_medicina1.jpg";
 
-const menuItems = [
-  { nombre: "Hamburguesa de guardia nocturna", precio: 85 },
-  { nombre: "Chilaquiles con suero y catéter", precio: 70 },
-  { nombre: "Torta de bisturí con papas", precio: 60 },
-  { nombre: "Sopa de órganos con receta", precio: 55 },
-  { nombre: "Pan de guardia con ansiedad", precio: 50 },
-  { nombre: "Maruchan intravenosa", precio: 25 },
-  { nombre: "Tostadas de paracetamol con guacamole", precio: 48 },
-  { nombre: "Mollete de primeros auxilios", precio: 52 },
-  { nombre: "Café negro como la especialidad", precio: 20 },
-  { nombre: "Boneless con morfina imaginaria", precio: 65 },
-];
 
 const Medicina1 = () => {
+   const [menuItems, setMenuItems] = useState([]);
+   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/api/Menus/?id_tiendita=8")
+      .then(response => {
+        if (!response.ok) throw new Error("Error al obtener el menú");
+        return response.json();
+      })
+      .then(data => {
+        setMenuItems(data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error("Error al cargar el menú:", error);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <div style={{
       minHeight: "100vh",

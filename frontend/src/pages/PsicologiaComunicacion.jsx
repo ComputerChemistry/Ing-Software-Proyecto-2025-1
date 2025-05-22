@@ -1,23 +1,29 @@
 // src/pages/PsicologiaComunicacion.jsx
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import psicologiaImg from "/Historia1Card.jpeg";
 
-const menuItems = [
-  { nombre: "Hamburguesas a la Freud con papas reprimidas", precio: 85 },
-  { nombre: "Sandwich de apego ansioso-evitativo", precio: 55 },
-  { nombre: "Tostadas de trauma no resuelto", precio: 45 },
-  { nombre: "Quesadilla proyectiva con queso existencial", precio: 60 },
-  { nombre: "Onigiri con disonancia cognitiva", precio: 50 },
-  { nombre: "Chilaquiles rojos de catarsis emocional", precio: 65 },
-  { nombre: "Pizza pan de validación externa", precio: 50 },
-  { nombre: "Mollete introspectivo con queso", precio: 52 },
-  { nombre: "Café frío como tu ex", precio: 25 },
-  { nombre: "Postre de negación y mecanismos de defensa", precio: 40 },
-];
-
 const PsicologiaComunicacion = () => {
+     const [menuItems, setMenuItems] = useState([]);
+   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/api/Menus/?id_tiendita=5")
+      .then(response => {
+        if (!response.ok) throw new Error("Error al obtener el menú");
+        return response.json();
+      })
+      .then(data => {
+        setMenuItems(data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error("Error al cargar el menú:", error);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <div style={{
       minHeight: "100vh",
@@ -45,12 +51,12 @@ const PsicologiaComunicacion = () => {
           marginBottom: "2rem"
         }}>
           <img src={psicologiaImg} alt="Cafetería Psicología / Comunicación" style={{
-            width: "100%",
-            maxWidth: "800px",
-            height: "auto",
-            borderRadius: "0.75rem",
-            boxShadow: "0 8px 20px rgba(0, 0, 0, 0.5)",
-            objectFit: "contain"
+	    width: "100%",
+	    maxWidth: "800px",
+	    height: "auto",
+	    borderRadius: "0.75rem",
+	    boxShadow: "0 8px 20px rgba(0, 0, 0, 0.5)",
+	    objectFit: "contain"
           }} />
         </div>
 
@@ -65,15 +71,15 @@ const PsicologiaComunicacion = () => {
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.4)"
         }}>
           {menuItems.map((item, index) => (
-            <div key={index} style={{
-              display: "flex",
-              justifyContent: "space-between",
-              borderBottom: "1px solid rgba(255,255,255,0.1)",
-              padding: "0.5rem 0"
-            }}>
-              <span>{item.nombre}</span>
-              <span>${item.precio}</span>
-            </div>
+	    <div key={index} style={{
+	      display: "flex",
+	      justifyContent: "space-between",
+	      borderBottom: "1px solid rgba(255,255,255,0.1)",
+	      padding: "0.5rem 0"
+	    }}>
+	      <span>{item.nombre}</span>
+	      <span>${item.precio}</span>
+	    </div>
           ))}
         </div>
       </main>

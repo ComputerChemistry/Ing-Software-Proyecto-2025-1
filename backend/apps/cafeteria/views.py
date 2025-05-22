@@ -1,5 +1,8 @@
 from rest_framework import serializers
 from rest_framework import viewsets
+from django.contrib.auth.hashers import make_password
+from django.contrib.auth.hashers import check_password
+from rest_framework.permissions import IsAuthenticated
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets, filters
 from rest_framework import generics, filters
@@ -22,63 +25,60 @@ from rest_framework.response import Response
 def login_view(request):
     print("====== DEBUG LOGIN VIEW ======")
     print("Request data:", request.data)
-    
+
     username = request.data.get('username')
     password = request.data.get('password')
-    
-    print(f"Intentando autenticar: {username} con contraseña: {password[:2]}...")
-    
+
+    # Validar entrada
+    if not username or not password:
+        return Response({
+            'success': False,
+            'error': 'Faltan credenciales'
+        }, status=status.HTTP_400_BAD_REQUEST)
+
+    print(f"Intentando autenticar usuario: {username}")
+
     try:
         # Verificar si el usuario existe
         user_exists = Usuarios.objects.filter(nombre_usuario=username).exists()
         print(f"¿Usuario existe? {user_exists}")
-        
+
         if user_exists:
             user = Usuarios.objects.get(nombre_usuario=username)
-            print(f"Usuario encontrado: ID={user.id_usuarios}, Email={user.email}")
-            
-            # Calcular hash para comparar
-            import hashlib
-            hashed_password = hashlib.sha256(password.encode()).hexdigest()
-            print(f"Hash calculado: {hashed_password[:10]}...")
-            print(f"Hash almacenado: {user.contrasena[:10]}...")
-            print(f"¿Coinciden los hashes? {user.contrasena == hashed_password}")
-            
-            if user.contrasena == hashed_password:
+            print(f"Usuario encontrado: ID={user.id_usuarios}")
+
+            # Verificar contraseña
+            if check_password(password, user.contrasena):
                 print("Autenticación exitosa")
-                # Crear token JWT manualmente
-                from rest_framework_simplejwt.tokens import RefreshToken
-                
-                # Crear un token para este usuario
-                refresh = RefreshToken()
-                refresh['user_id'] = user.id_usuarios
-                refresh['username'] = user.nombre_usuario
-                
+
+                # Crear tokens JWT para el usuario
+                refresh = RefreshToken.for_user(user)
+
                 return Response({
                     'success': True,
-                    'access_token': str(refresh.access_token)
+                    'access_token': str(refresh.access_token),
+                    'refresh_token': str(refresh)
                 }, status=status.HTTP_200_OK)
+
             else:
                 print("Contraseña incorrecta")
                 return Response({
                     'success': False,
                     'error': 'Credenciales inválidas'
                 }, status=status.HTTP_401_UNAUTHORIZED)
-        
         else:
             print("Usuario no encontrado")
             return Response({
                 'success': False,
                 'error': 'Usuario no encontrado'
             }, status=status.HTTP_401_UNAUTHORIZED)
-    
+
     except Exception as e:
         print(f"Error en login_view: {str(e)}")
         return Response({
             'success': False,
             'error': f'Error en el servidor: {str(e)}'
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
 
 class MenusViewSet(viewsets.ModelViewSet):
     queryset = Menus.objects.all()
@@ -117,6 +117,16 @@ class UsuariosViewSet(viewsets.ModelViewSet):
     ordering_fields = ['nombre']
 
 
+class UsuarioActualView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        usuario = request.user
+        return Response({
+            'nombre_usuario': usuario.nombre_usuario,
+            'id': usuario.id_usuarios,
+        })
+
 #Filtrar Menus
 class MenusPorTiendita(generics.ListAPIView):
     serializer_class = MenusSerializer
@@ -127,17 +137,18 @@ class MenusPorTiendita(generics.ListAPIView):
 
 #Serializer para crear usuarios
 class UserRegisterSerializer(ModelSerializer):
-    class Meta: 
-        model = User
-        fields = ['username', 'password', 'email']
-        extra_kwargs = {    
-            'password' : {'write_only': True}
+    class Meta:
+        model = Usuarios
+        fields = ['nombre_usuario', 'contrasena']  # No incluir el campo 'email' aquí
+        extra_kwargs = {
+            'contrasena': {'write_only': True},  # La contraseña no debe ser devuelta
         }
-        
-    def create(self, validate_data): 
-        user = User.objects.create_user(**validated_data)
-        return user
 
+    def create(self, validated_data):
+        contrasena = validated_data['contrasena']
+        hashed_password = make_password(contrasena)  # Hasheamos la contraseña antes de guardarla
+        validated_data['contrasena'] = hashed_password
+        return Usuarios.objects.create(**validated_data)
 
 class UserRegisterView(generics.CreateAPIView):
     queryset = User.objects.all()

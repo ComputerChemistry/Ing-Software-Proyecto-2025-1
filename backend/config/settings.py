@@ -86,7 +86,8 @@ MIDDLEWARE = [
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
+    "http://localhost:5173", #desarollo local 
+    "https://proyectoscc.unison.mx", # produccion 
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -122,6 +123,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
+
+#AUTH_USER_MODEL = 'cafeteria.Usuarios'
+
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
