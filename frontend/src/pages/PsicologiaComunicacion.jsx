@@ -43,7 +43,7 @@ const PsicologiaComunicacion = () => {
 
       <main style={{ flexGrow: 1, padding: "2rem", paddingTop: "7rem" }}>
         <h1 style={{ fontSize: "2rem", fontWeight: "bold", textAlign: "center", marginBottom: "1rem" }}>
-          Cafetería Psicología / Comunicación
+          Cafetería Historia / Sociologia
         </h1>
         <div style={{
           display: "flex",

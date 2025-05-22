@@ -15,7 +15,7 @@ import tiendaCivilMinas from "../assets/tienda_civil-arqui.jpg";
 import Geologia from "/Cafeteria-Geologia1Card.jpeg";
 import Matematicas from "/Matematicas1Card.png";
 import Artes from "/Artes1Card.png";
-
+import Medicina2 from "/Medicina2Card.jpeg";
 
 const Cafeterias = () => {
   const [cafeterias, setCafeterias] = useState([]);
@@ -43,7 +43,7 @@ const Cafeterias = () => {
       "Cafeteria Historia/Sociologia": Historia,
       "Cafeteria Educacion": tienditaEducacion,
       "Cafeteria Medicina": tiendaMedicina1,
-      "Cafeteria Medicina 2": tiendaMedicina2,
+      "Cafetería Medicina 2": Medicina2,
       "Cafeteria Departemento de Ingenieria Quimica": tiendaIngenieriaQuimica,
       "Cafeteria Departemento de Ingenieria Industrial/Civil": tiendaCivilMinas,
       "Cafetería Matemáticas": Matematicas, 

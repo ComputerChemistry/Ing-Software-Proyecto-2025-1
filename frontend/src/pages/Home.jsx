@@ -7,6 +7,7 @@ import Derecho1 from "/Derecho1Card.jpeg";
 import TrabajoSocial from "/TrabajoSocial1Card.jpeg";
 import Educacion from "/Eduacion1Card.jpeg";
 import Derecho2 from "/Derecho2Card.jpeg";
+import Historia from "/Historia1Card.jpeg";
 import Medicina1 from "/Medicina1Card.jpeg";
 import Medicina2 from "/Medicina2Card.jpeg";
 import CivilMinas from "/IngenieriaCivil1Card.jpeg";
@@ -19,9 +20,9 @@ const cafeterias = [
   { name: "Cafetería Derecho", image: Derecho1, path: "/cafeterias/cafeteria-derecho" },
   { name: "Cafetería Trabajo Social", image: TrabajoSocial, path: "/cafeterias/cafeteria-de-trabajo-social" },
   { name: "Cafetería Educación", image: Educacion, path: "/cafeterias/cafeteria-educacion" },
-  { name: "Cafetería Psicología/Comunicación", image: Derecho2, path: "/cafeterias/cafeteria-historia/sociologia" },
+  { name: "Cafetería Historia/Sociologia", image: Historia, path: "/cafeterias/cafeteria-historia/sociologia" },
   { name: "Cafetería Medicina", image: Medicina1, path: "/cafeterias/cafetería-medicina" },
-  { name: "Segunda Cafetería Medicina", image: Medicina2, path: "/cafeterias/cafeteria-medicina-2" },
+  { name: "Cafetería Medicina 2", image: Medicina2, path: "/cafeterias/cafetería-medicina-2" },
   { name: "Cafetería Civil-Minas", image: CivilMinas, path: "/cafeterias/cafeteria-departemento-de-ingenieria-industrial/civil" },
   { name: "Cafetería Ingeniería Química", image: IngenieriaQuimica, path: "/cafeterias/cafeteria-departemento-de-ingenieria-quimica" },
   { name: "Cafetería Matematicas", image: Matematicas, path: "/cafeterias/cafetería-matemáticas"},

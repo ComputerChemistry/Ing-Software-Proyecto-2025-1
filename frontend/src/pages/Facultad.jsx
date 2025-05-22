@@ -8,8 +8,10 @@ const facultades = [
     nombre: "Facultad Interdisciplinaria de Ciencias Sociales",
     cafeterias: [
       "Cafetería Derecho",
+      "Cafeteria Derecho 2",
       "Cafetería Trabajo Social",
-      "Cafetería Psicología/Comunicación"
+      "Cafetería Historia/Sociologia", 
+      "Cafeteria Educacion"
     ]
   },
   {
@@ -29,9 +31,18 @@ const facultades = [
   {
     nombre: "Facultad Interdisciplinaria de Humanidades y Artes",
     cafeterias: [
-      // Educación eliminada según lo solicitado
+      "Cafeteria de Artes"      
     ]
-  }
+  },
+    {
+      nombre: "Facultad Interdisciplinaria de Ciencias Exactas y Naturales",
+      cafeterias: [
+	"Cafeteria de Matematicas",
+	"Cafeteria de Geologia"
+      ]
+    }
+  
+
 ];
 
 const Facultad = () => {

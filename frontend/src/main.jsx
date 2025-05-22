@@ -45,7 +45,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Route path="/cafeterias/matematicas" element={<Matematicas/>} />
       <Route path="/cafeterias/geologia" element={<Geologia/>} />
       <Route path="/cafeterias/cafetería-medicina" element={<Medicina1 />} />
-      <Route path="/cafeterias/medicina-2" element={<Medicina2 />} />
+      <Route path="/cafeterias/cafetería-medicina-2" element={<Medicina2 />} />
       <Route path="/cafeterias/cafeteria-departemento-de-ingenieria-industrial/civil" element={<CivilMinas />} />
       <Route path="/cafeterias/cafeteria-departemento-de-ingenieria-quimica" element={<IngenieriaQuimica />} />
       <Route path="/cafeterias/cafetería-matemáticas" element={<Matematicas />} />

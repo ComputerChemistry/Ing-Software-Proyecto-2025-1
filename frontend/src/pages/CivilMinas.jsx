@@ -8,7 +8,7 @@ const CivilMinas = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Asegúrate de que este endpoint esté activo en tu backend
+
     fetch("http://localhost:8000/api/Menus/?id_tiendita=7")
       .then(response => {
         if (!response.ok) throw new Error("Error al obtener el menú");
